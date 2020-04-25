@@ -5,6 +5,9 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class DnaSequenceTest {
     DnaSequence dnaSequence;
     @Before
@@ -14,6 +17,10 @@ public class DnaSequenceTest {
 
     @Test
     public void transcribe() {
-        // TODO: implement tests
+    	String dna = "GCTCGCAACATCGGATATAGA";
+    	List<String> aminoacid = dnaSequence.transcribe(dna);
+    	String[] words = {"ala","leu","ser","arg","ala","gln","asn","thr","his","lle","ser","arg","gly","asp","lle","tyr","lle","stop","arg"};
+    	List<String> answer = Arrays.asList(words); 
+    	assertEquals(answer,aminoacid);
     }
 }
